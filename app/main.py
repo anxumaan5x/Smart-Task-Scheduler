@@ -1,6 +1,6 @@
 import uvicorn
 from fastapi import FastAPI
-from api import  task, user
+from api import task, user
 
 app = FastAPI(title="Smart Task Scheduler")
 
