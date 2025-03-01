@@ -1,11 +1,12 @@
 import uvicorn
 from fastapi import FastAPI
-from api import task, user
+from api import task, user, auth
 
 app = FastAPI(title="Smart Task Scheduler")
 
 app.include_router(task.router, prefix='/tasks', tags=['tasks'])
 app.include_router(user.router, prefix='/users', tags=['users'])
+app.include_router(auth.router, prefix='/auth', tags=['auth'])
 
 @app.get("/")
 def read_root():
@@ -13,4 +14,4 @@ def read_root():
 
 if __name__ == "__main__":
     # Run without reload for debugging
-    uvicorn.run("main:app", host="127.0.0.1", port=8000, log_level="info", reload=False)
+    uvicorn.run("main:app", host="127.0.0.1", port=8000, log_level="info", reload=True)

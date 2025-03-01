@@ -21,7 +21,8 @@ class TaskResponse(TaskBase):
 
 class UserBase(BaseModel):
     username: str
-    email: str
+    email: str = None
+    password: str
 
 class UserCreate(UserBase):
     pass
@@ -32,3 +33,7 @@ class UserResponse(UserBase):
 
     class Config:
         from_attributes = True
+
+class Token(BaseModel):
+    access_token: str
+    token_type: str
