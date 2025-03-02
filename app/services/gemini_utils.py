@@ -17,7 +17,7 @@ def get_task_deadline_and_priority(task_title: str, tasks: TaskList) -> TaskDead
     - Deadline should be in ISO 8601 format (YYYY-MM-DD HH:MM:SS) if mentioned.
     - If the deadline is relative (e.g., 'tomorrow' or 'next week' or 'by today 6 PM', 'tomorrow', 'next Monday'), calculate the actual date-time.
     - If the deadline does not contain exact time, take the ceiling (e.g., 'by tomorrow' becomes (YYYY-MM-DD 23:59:59)).
-    - Be more intelligent about the deadline (e.g., breakfast is to be had in the morning, sleep early is to be done at night)
+    - Be more intelligent about the deadline (e.g., breakfast is to be had in the morning, sleep early is to be done at night, going to school is in the morning)
     - If no deadline is found, return null.
     - Determine urgency as 1=High, 2=Medium, or 3=Low.
     - Determine the priority keeping in mind I already have other tasks in hand.
