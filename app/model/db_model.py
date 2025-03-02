@@ -15,10 +15,11 @@ class User(Base):
 class Task(Base):
     __tablename__ = "tasks"
     id = Column(Integer, primary_key=True, index=True)
-    name = Column(String, index=True)
+    title = Column(String, index=True, nullable=False)
     category = Column(String, index=True, default="General")
     priority = Column(Integer, index=True)
     created_at = Column(DateTime, default=lambda: datetime.now(timezone.utc))
+    deadline = Column(DateTime)
     completed = Column(Boolean, default=False)
     user_id = Column(Integer, ForeignKey("users.id"))  # Foreign key
     user = relationship("User", back_populates="tasks")  # Many-to-One

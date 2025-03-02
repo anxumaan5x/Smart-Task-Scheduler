@@ -3,7 +3,7 @@ from sqlalchemy.orm import Session
 
 from config.database_connector import get_db
 from model.db_model import User
-from model.schema import UserResponse, UserCreate, Token
+from model.schema import UserCreate, Token
 
 from fastapi import APIRouter
 
